@@ -1,1 +1,17 @@
-new.html.erb
+<h1> Create a New Task </h1>
+
+<%= form_tag '/tasks', method: :post do %>
+  <div>
+    <%= label_tag :name %>
+    <%= text_field_tag :name, @task.name %>
+  </div>
+  
+  <div>
+    <%= label_tag :description %>
+    <%= text_field_tag :description, @task.description %>
+  </div>
+
+  <div>
+    <%= submit_tag "Create it!" %>
+  </div>
+<% end %>
